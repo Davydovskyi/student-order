@@ -17,15 +17,18 @@ public class Config {
     }
 
     //TODO refactoring 'throw new RuntimeException(e)'
-    public static synchronized String getProperties(String name) {
-        if (properties.isEmpty()) {
+    public static String getProperties(String name) {
+        if (!properties.isEmpty()) {
+            return properties.getProperty(name);
+        }
+        synchronized (Config.class) {
             try (InputStream is = Config.class.getClassLoader().getResourceAsStream("dao.properties")) {
                 properties.load(is);
             } catch (IOException e) {
                 e.printStackTrace();
                 throw new RuntimeException(e);
             }
+            return properties.getProperty(name);
         }
-        return properties.getProperty(name);
     }
 }
