@@ -1,6 +1,6 @@
 package edu.jcourse.student_order.dao;
 
-import edu.jcourse.student_order.SaveStudentOrder;
+import edu.jcourse.student_order.dao.impl.StudentOrderDAOImpl;
 import edu.jcourse.student_order.domain.*;
 import edu.jcourse.student_order.domain.document.BirthCertificate;
 import edu.jcourse.student_order.domain.document.MarriageCertificate;
@@ -8,7 +8,6 @@ import edu.jcourse.student_order.domain.document.Passport;
 import edu.jcourse.student_order.domain.office.PassportOffice;
 import edu.jcourse.student_order.domain.office.RegisterOffice;
 import edu.jcourse.student_order.exception.DAOException;
-import edu.jcourse.student_order.mail.MailSender;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
@@ -78,7 +77,7 @@ class StudentOrderDAOImplTest {
     @Order(1)
     @Test
     void saveStudentOrder() throws DAOException {
-        StudentOrderDAO dao = new StudentOrderDAOImpl();
+        StudentOrderDAO dao = DAOProvider.getInstance().getStudentOrderDAO();
 
         StudentOrder studentOrder = buildStudentOrder(10);
         Long id = dao.saveStudentOrder(studentOrder);
@@ -95,7 +94,7 @@ class StudentOrderDAOImplTest {
     @Order(3)
     @Test
     void saveStudentOrderError() {
-        StudentOrderDAO dao = new StudentOrderDAOImpl();
+        StudentOrderDAO dao = DAOProvider.getInstance().getStudentOrderDAO();
 
         StudentOrder so = buildStudentOrder(10);
         so.getHusband().setSurName(null);

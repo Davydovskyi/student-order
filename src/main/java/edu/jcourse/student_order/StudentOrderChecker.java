@@ -1,6 +1,6 @@
 package edu.jcourse.student_order;
 
-import edu.jcourse.student_order.dao.StudentOrderDAOImpl;
+import edu.jcourse.student_order.dao.impl.StudentOrderDAOImpl;
 import edu.jcourse.student_order.domain.StudentOrder;
 import edu.jcourse.student_order.domain.children.AnswerChildren;
 import edu.jcourse.student_order.domain.register.AnswerCityRegister;

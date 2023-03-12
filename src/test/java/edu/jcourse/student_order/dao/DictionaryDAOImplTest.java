@@ -20,7 +20,7 @@ class DictionaryDAOImplTest {
 
     @Test
     void testStreet() throws DAOException {
-        DictionaryDAO dao = new DictionaryDAOImpl();
+        DictionaryDAO dao = DAOProvider.getInstance().getDictionaryDAO();
 
         List<Street> streets1 = dao.findStreets("сад");
         Assertions.assertEquals(1, streets1.size());
@@ -37,7 +37,7 @@ class DictionaryDAOImplTest {
 
     @Test
     void testPassportOffice() throws DAOException {
-        DictionaryDAO dao = new DictionaryDAOImpl();
+        DictionaryDAO dao = DAOProvider.getInstance().getDictionaryDAO();
 
         List<PassportOffice> passportOffices1 = dao.findPassportOffices("010020000000");
         Assertions.assertEquals(2, passportOffices1.size());
@@ -54,7 +54,7 @@ class DictionaryDAOImplTest {
 
     @Test
     void testRegisterOffice() throws DAOException {
-        DictionaryDAO dao = new DictionaryDAOImpl();
+        DictionaryDAO dao = DAOProvider.getInstance().getDictionaryDAO();
 
         List<RegisterOffice> registerOffices1 = dao.findRegisterOffices("010010000000");
         Assertions.assertEquals(2, registerOffices1.size());
@@ -71,7 +71,7 @@ class DictionaryDAOImplTest {
 
     @Test
     void testArea() throws DAOException {
-        DictionaryDAO dao = new DictionaryDAOImpl();
+        DictionaryDAO dao = DAOProvider.getInstance().getDictionaryDAO();
 
         List<CountryArea> areas1 = dao.findAreas("");
         Assertions.assertEquals(2, areas1.size());
@@ -91,7 +91,7 @@ class DictionaryDAOImplTest {
 
     @Test
     void testAreaError() {
-        DictionaryDAO dao = new DictionaryDAOImpl();
+        DictionaryDAO dao = DAOProvider.getInstance().getDictionaryDAO();
         Assertions.assertThrows(DAOException.class, () -> dao.findAreas("0200"));
     }
 }

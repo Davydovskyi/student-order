@@ -1,6 +1,8 @@
-package edu.jcourse.student_order.dao;
+package edu.jcourse.student_order.dao.impl;
 
 import edu.jcourse.student_order.config.Config;
+import edu.jcourse.student_order.dao.ConnectionBuilder;
+import edu.jcourse.student_order.dao.StudentOrderDAO;
 import edu.jcourse.student_order.domain.*;
 import edu.jcourse.student_order.domain.document.BirthCertificate;
 import edu.jcourse.student_order.domain.document.MarriageCertificate;

@@ -1,5 +1,7 @@
-package edu.jcourse.student_order.dao;
+package edu.jcourse.student_order.dao.impl;
 
+import edu.jcourse.student_order.dao.ConnectionBuilder;
+import edu.jcourse.student_order.dao.DictionaryDAO;
 import edu.jcourse.student_order.domain.CountryArea;
 import edu.jcourse.student_order.domain.Street;
 import edu.jcourse.student_order.domain.office.PassportOffice;
