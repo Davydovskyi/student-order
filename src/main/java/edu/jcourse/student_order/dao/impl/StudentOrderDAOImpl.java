@@ -214,7 +214,7 @@ public class StudentOrderDAOImpl implements StudentOrderDAO {
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDERS)) {
 
             preparedStatement.setInt(1, StudentOrderStatus.START.ordinal());
-            preparedStatement.setInt(2, Integer.parseInt(Config.getProperties(Config.DB_LIMIT)));
+            preparedStatement.setInt(2, Integer.parseInt(Config.getProperty(Config.DB_LIMIT)));
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 StudentOrder studentOrder = getFullStudentOrder(resultSet);
@@ -237,7 +237,7 @@ public class StudentOrderDAOImpl implements StudentOrderDAO {
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ORDERS_FULL)) {
 
             preparedStatement.setInt(1, StudentOrderStatus.START.ordinal());
-            int limit = Integer.parseInt(Config.getProperties(Config.DB_LIMIT));
+            int limit = Integer.parseInt(Config.getProperty(Config.DB_LIMIT));
             preparedStatement.setInt(2, limit);
 
 

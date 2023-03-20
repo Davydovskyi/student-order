@@ -7,7 +7,6 @@ import edu.jcourse.student_order.domain.register.AnswerCityRegister;
 import edu.jcourse.student_order.domain.register.AnswerCityRegisterItem;
 import edu.jcourse.student_order.domain.register.CityRegisterResponse;
 import edu.jcourse.student_order.exception.CityRegisterException;
-import edu.jcourse.student_order.exception.TransportException;
 import edu.jcourse.student_order.validator.register.CityRegisterChecker;
 import edu.jcourse.student_order.validator.register.RealCityRegisterChecker;
 
@@ -40,14 +39,14 @@ public class CityRegisterValidator {
             CityRegisterResponse response = personChecker.checkPerson(person);
             status = response.isRegistered() ?
                     AnswerCityRegisterItem.CityStatus.YES : AnswerCityRegisterItem.CityStatus.NO;
-        } catch (CityRegisterException | TransportException e) {
+        } catch (CityRegisterException e) {
             e.printStackTrace();
             status = AnswerCityRegisterItem.CityStatus.ERROR;
-            if (e instanceof CityRegisterException exception) {
-                error = new AnswerCityRegisterItem.CityError(exception.getCode(), e.getMessage());
-            } else {
-                error = new AnswerCityRegisterItem.CityError(IN_CODE, e.getMessage());
-            }
+            error = new AnswerCityRegisterItem.CityError(e.getCode(), e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+            status = AnswerCityRegisterItem.CityStatus.ERROR;
+            error = new AnswerCityRegisterItem.CityError(IN_CODE, e.getMessage());
         }
 
         return new AnswerCityRegisterItem(person, status, error);

@@ -51,7 +51,6 @@ public class StudentOrderChecker {
 
     public void checkOneOrder(StudentOrder so) {
         AnswerCityRegister cityAnswer = checkCityRegister(so);
-        System.out.println();
 //        AnswerWedding weddingAnswer = checkWedding(so);
 //        AnswerChildren childrenAnswer = checkChildren(so);
 //        AnswerStudent studentAnswer = checkStudent(so);

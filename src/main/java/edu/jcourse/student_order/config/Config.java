@@ -9,6 +9,7 @@ public class Config {
     public static final String DB_LOGIN = "db.login";
     public static final String DB_PASSWORD = "db.password";
     public static final String DB_LIMIT = "db.limit";
+    public static final String CR_URL = "cr.url";
 
 
     private static final Properties properties = new Properties();
@@ -17,12 +18,12 @@ public class Config {
     }
 
     //TODO refactoring 'throw new RuntimeException(e)'
-    public static String getProperties(String name) {
+    public static String getProperty(String name) {
         if (!properties.isEmpty()) {
             return properties.getProperty(name);
         }
         synchronized (Config.class) {
-            try (InputStream is = Config.class.getClassLoader().getResourceAsStream("dao.properties")) {
+            try (InputStream is = Config.class.getClassLoader().getResourceAsStream("config.properties")) {
                 properties.load(is);
             } catch (IOException e) {
                 e.printStackTrace();
