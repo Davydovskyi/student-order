@@ -1,6 +1,6 @@
 package edu.jcourse.student_order;
 
-import edu.jcourse.student_order.dao.impl.StudentOrderDAOImpl;
+import edu.jcourse.student_order.dao.DAOProvider;
 import edu.jcourse.student_order.domain.StudentOrder;
 import edu.jcourse.student_order.domain.children.AnswerChildren;
 import edu.jcourse.student_order.domain.register.AnswerCityRegister;
@@ -37,7 +37,7 @@ public class StudentOrderChecker {
     }
 
     public List<StudentOrder> readStudentOrders() throws DAOException {
-        return new StudentOrderDAOImpl().getStudentOrders();
+        return DAOProvider.getInstance().getStudentOrderDAO().getStudentOrders();
     }
 
     public void checkAll() {
@@ -51,6 +51,7 @@ public class StudentOrderChecker {
 
     public void checkOneOrder(StudentOrder so) {
         AnswerCityRegister cityAnswer = checkCityRegister(so);
+        System.out.println();
 //        AnswerWedding weddingAnswer = checkWedding(so);
 //        AnswerChildren childrenAnswer = checkChildren(so);
 //        AnswerStudent studentAnswer = checkStudent(so);

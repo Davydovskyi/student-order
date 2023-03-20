@@ -1,9 +1,8 @@
 package edu.jcourse.student_order.domain.office;
 
-import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Office implements Serializable {
+public abstract class Office {
 
     private Long officeID;
     private String officeAreaId;

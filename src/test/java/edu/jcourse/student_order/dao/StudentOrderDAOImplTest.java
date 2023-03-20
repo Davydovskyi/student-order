@@ -12,16 +12,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.util.List;
 
 // TODO покрыть тестами как можно больше.(как протестировать запись в базу при плохих данных(null) - saveStudentOrderError.
 class StudentOrderDAOImplTest {
-
-    private static final Logger logger = LoggerFactory.getLogger(StudentOrderDAOImplTest.class);
 
     @BeforeAll
     public static void startUp() throws Exception {
@@ -36,10 +32,10 @@ class StudentOrderDAOImplTest {
                 new RegisterOffice(1L, "", ""), LocalDate.of(2014, 12, 3));
         studentOrder.setMarriageCertificate(marriageCertificate);
 
-        Street mainStreet = new Street(2L, "First Street");
-        Address address = new Address("195000", mainStreet, "12", "", "34");
+        Street street = new Street(1L, "Сампмсоньевский проспект");
+        Address address = new Address("195000", street, "10", "2", "121");
 
-        Adult husband = new Adult("Mike", "Scott", "Dvi", LocalDate.of(1980, 11, 23));
+        Adult husband = new Adult("Васильев", "Павел", "Николаевич", LocalDate.of(1995, 3, 18));
         husband.setUniversity(new University(2L, ""));
         husband.setStudentId("" + (10000 + id));
         husband.setAddress(address);
@@ -47,7 +43,7 @@ class StudentOrderDAOImplTest {
                 new PassportOffice(2L, "", ""));
         husband.setPassport(husbandPassport);
 
-        Adult wife = new Adult("Jan", "Lewis", "Marry", LocalDate.of(1983, 2, 12));
+        Adult wife = new Adult("Васильева", "Ирина", "Петровна", LocalDate.of(1997, 8, 21));
         wife.setUniversity(new University(1L, ""));
         wife.setStudentId("" + (200000 + id));
         wife.setAddress(address);
@@ -55,13 +51,13 @@ class StudentOrderDAOImplTest {
                 new PassportOffice(3L, "", ""));
         wife.setPassport(wifePassport);
 
-        Child child1 = new Child("Mike", "Garry", "Scott", LocalDate.of(2018, 3, 23));
+        Child child1 = new Child("Васильева", "Евгения", "Павловна", LocalDate.of(2016, 1, 11));
         BirthCertificate birthCertificate1 = new BirthCertificate("" + (300000 + id),
                 new RegisterOffice(4L, "", ""), LocalDate.of(2018, 3, 23));
         child1.setBirthCertificate(birthCertificate1);
         child1.setAddress(address);
 
-        Child child2 = new Child("Mia", "May", "Scott", LocalDate.of(2020, 5, 12));
+        Child child2 = new Child("Васильев", "Александр", "Павлович", LocalDate.of(2018, 10, 24));
         BirthCertificate birthCertificate2 = new BirthCertificate("" + (400000 + id),
                 new RegisterOffice(5L, "", ""), LocalDate.of(2020, 5, 30));
         child2.setBirthCertificate(birthCertificate2);

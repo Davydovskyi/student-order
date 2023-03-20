@@ -9,16 +9,16 @@ import edu.jcourse.student_order.domain.register.CityRegisterResponse;
 import edu.jcourse.student_order.exception.CityRegisterException;
 import edu.jcourse.student_order.exception.TransportException;
 import edu.jcourse.student_order.validator.register.CityRegisterChecker;
-import edu.jcourse.student_order.validator.register.FakeCityRegisterChecker;
+import edu.jcourse.student_order.validator.register.RealCityRegisterChecker;
 
 public class CityRegisterValidator {
 
     private static final String IN_CODE = "NO_GRM";
 
-    private CityRegisterChecker personChecker;
+    private final CityRegisterChecker personChecker;
 
     public CityRegisterValidator() {
-        personChecker = new FakeCityRegisterChecker();
+        personChecker = new RealCityRegisterChecker();
     }
 
     public AnswerCityRegister checkCityRegister(StudentOrder studentOrder) {
@@ -38,7 +38,7 @@ public class CityRegisterValidator {
         AnswerCityRegisterItem.CityError error = null;
         try {
             CityRegisterResponse response = personChecker.checkPerson(person);
-            status = response.isExisting() ?
+            status = response.isRegistered() ?
                     AnswerCityRegisterItem.CityStatus.YES : AnswerCityRegisterItem.CityStatus.NO;
         } catch (CityRegisterException | TransportException e) {
             e.printStackTrace();

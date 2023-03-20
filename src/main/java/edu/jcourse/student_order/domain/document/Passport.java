@@ -2,15 +2,10 @@ package edu.jcourse.student_order.domain.document;
 
 import edu.jcourse.student_order.domain.office.PassportOffice;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Passport implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = -4582901849117846350L;
+public class Passport {
 
     private String passportSeries;
     private String passportNumber;

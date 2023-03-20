@@ -2,15 +2,10 @@ package edu.jcourse.student_order.domain.document;
 
 import edu.jcourse.student_order.domain.office.RegisterOffice;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class BirthCertificate implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = 4429692637093029661L;
+public class BirthCertificate {
 
     private String certificateNumber;
     private RegisterOffice issueDepartment;

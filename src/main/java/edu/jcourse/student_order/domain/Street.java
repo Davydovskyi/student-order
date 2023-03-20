@@ -1,13 +1,8 @@
 package edu.jcourse.student_order.domain;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.util.Objects;
 
-public class Street implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = -2994749762255759818L;
+public class Street {
 
     private Long streetCode;
     private String streetName;

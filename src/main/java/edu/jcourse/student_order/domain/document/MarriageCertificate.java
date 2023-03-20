@@ -2,15 +2,10 @@ package edu.jcourse.student_order.domain.document;
 
 import edu.jcourse.student_order.domain.office.RegisterOffice;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class MarriageCertificate implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = 9007294100779690398L;
+public class MarriageCertificate {
 
     private String marriageCertificateId;
     private RegisterOffice marriageOffice;

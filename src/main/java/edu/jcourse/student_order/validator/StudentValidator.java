@@ -1,8 +1,7 @@
 package edu.jcourse.student_order.validator;
 
-import edu.jcourse.student_order.domain.student.AnswerStudent;
 import edu.jcourse.student_order.domain.StudentOrder;
-import edu.jcourse.student_order.mail.MailSender;
+import edu.jcourse.student_order.domain.student.AnswerStudent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

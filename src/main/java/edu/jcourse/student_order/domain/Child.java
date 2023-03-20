@@ -2,14 +2,10 @@ package edu.jcourse.student_order.domain;
 
 import edu.jcourse.student_order.domain.document.BirthCertificate;
 
-import java.io.Serial;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class Child extends Person {
-
-    @Serial
-    private static final long serialVersionUID = -6851963215245556650L;
 
     private BirthCertificate birthCertificate;
 

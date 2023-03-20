@@ -1,13 +1,8 @@
 package edu.jcourse.student_order.domain;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.util.Objects;
 
-public class CountryArea implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = 2017743776158838457L;
+public class CountryArea {
 
     private String areaId;
     private String areaName;

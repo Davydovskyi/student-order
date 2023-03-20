@@ -1,14 +1,9 @@
 package edu.jcourse.student_order.domain;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class Person implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = -8844819616054188223L;
+public abstract class Person {
 
     // TODO fields should be protected or private?
     protected String surName;

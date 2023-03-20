@@ -2,14 +2,10 @@ package edu.jcourse.student_order.domain;
 
 import edu.jcourse.student_order.domain.document.Passport;
 
-import java.io.Serial;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class Adult extends Person {
-
-    @Serial
-    private static final long serialVersionUID = 8330065548938803255L;
 
     private Passport passport;
     private University university;

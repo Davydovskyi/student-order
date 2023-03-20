@@ -1,38 +1,31 @@
 package edu.jcourse.student_order.domain.register;
 
-import java.io.Serial;
-import java.io.Serializable;
-import java.util.Objects;
+public class CityRegisterResponse {
 
-public class CityRegisterResponse implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = -8184831828919799482L;
-
-    private boolean existing;
-    private Boolean temporal;
+    private boolean registered;
+    private boolean temporal;
 
     public CityRegisterResponse() {
     }
 
     public CityRegisterResponse(boolean existing, Boolean temporal) {
-        this.existing = existing;
+        this.registered = existing;
         this.temporal = temporal;
     }
 
-    public boolean isExisting() {
-        return existing;
+    public boolean isRegistered() {
+        return registered;
     }
 
-    public void setExisting(boolean existing) {
-        this.existing = existing;
+    public void setRegistered(boolean registered) {
+        this.registered = registered;
     }
 
-    public Boolean getTemporal() {
+    public boolean isTemporal() {
         return temporal;
     }
 
-    public void setTemporal(Boolean temporal) {
+    public void setTemporal(boolean temporal) {
         this.temporal = temporal;
     }
 
@@ -41,23 +34,23 @@ public class CityRegisterResponse implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CityRegisterResponse that = (CityRegisterResponse) o;
+        CityRegisterResponse response = (CityRegisterResponse) o;
 
-        if (existing != that.existing) return false;
-        return Objects.equals(temporal, that.temporal);
+        if (registered != response.registered) return false;
+        return temporal == response.temporal;
     }
 
     @Override
     public int hashCode() {
-        int result = (existing ? 1 : 0);
-        result = 31 * result + (temporal != null ? temporal.hashCode() : 0);
+        int result = (registered ? 1 : 0);
+        result = 31 * result + (temporal ? 1 : 0);
         return result;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder(getClass().getSimpleName());
-        sb.append("{existing=").append(existing);
+        sb.append("{registered=").append(registered);
         sb.append(", temporal=").append(temporal);
         sb.append('}');
         return sb.toString();

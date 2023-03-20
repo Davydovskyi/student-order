@@ -2,17 +2,12 @@ package edu.jcourse.student_order.domain;
 
 import edu.jcourse.student_order.domain.document.MarriageCertificate;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class StudentOrder implements Serializable {
-
-    @Serial
-    private static final long serialVersionUID = 8257787715582366233L;
+public class StudentOrder {
 
     private long studentOrderId;
     private StudentOrderStatus studentOrderStatus;
