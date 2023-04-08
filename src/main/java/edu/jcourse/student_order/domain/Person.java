@@ -5,7 +5,6 @@ import java.util.Objects;
 
 public abstract class Person {
 
-    // TODO fields should be protected or private?
     protected String surName;
     protected String givenName;
     protected String patronymic;

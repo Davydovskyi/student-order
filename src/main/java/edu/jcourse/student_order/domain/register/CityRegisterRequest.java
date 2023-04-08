@@ -6,7 +6,6 @@ import edu.jcourse.student_order.util.LocalDateAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 public class CityRegisterRequest {
     private String surName;
@@ -96,50 +95,5 @@ public class CityRegisterRequest {
 
     public void setApartment(String apartment) {
         this.apartment = apartment;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        CityRegisterRequest that = (CityRegisterRequest) o;
-
-        if (!Objects.equals(surName, that.surName)) return false;
-        if (!Objects.equals(givenName, that.givenName)) return false;
-        if (!Objects.equals(patronymic, that.patronymic)) return false;
-        if (!Objects.equals(dateOfBirth, that.dateOfBirth)) return false;
-        if (!Objects.equals(streetCode, that.streetCode)) return false;
-        if (!Objects.equals(building, that.building)) return false;
-        if (!Objects.equals(extension, that.extension)) return false;
-        return Objects.equals(apartment, that.apartment);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = surName != null ? surName.hashCode() : 0;
-        result = 31 * result + (givenName != null ? givenName.hashCode() : 0);
-        result = 31 * result + (patronymic != null ? patronymic.hashCode() : 0);
-        result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
-        result = 31 * result + (streetCode != null ? streetCode.hashCode() : 0);
-        result = 31 * result + (building != null ? building.hashCode() : 0);
-        result = 31 * result + (extension != null ? extension.hashCode() : 0);
-        result = 31 * result + (apartment != null ? apartment.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        @SuppressWarnings("DuplicatedCode") final StringBuilder sb = new StringBuilder(getClass().getSimpleName());
-        sb.append("{surName='").append(surName).append('\'');
-        sb.append(", givenName='").append(givenName).append('\'');
-        sb.append(", patronymic='").append(patronymic).append('\'');
-        sb.append(", dateOfBirth=").append(dateOfBirth);
-        sb.append(", streetCode=").append(streetCode);
-        sb.append(", building='").append(building).append('\'');
-        sb.append(", extension='").append(extension).append('\'');
-        sb.append(", apartment='").append(apartment).append('\'');
-        sb.append('}');
-        return sb.toString();
     }
 }

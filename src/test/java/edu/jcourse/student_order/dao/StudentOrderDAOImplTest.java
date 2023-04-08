@@ -16,7 +16,6 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.List;
 
-// TODO покрыть тестами как можно больше.(как протестировать запись в базу при плохих данных(null) - saveStudentOrderError.
 class StudentOrderDAOImplTest {
 
     @BeforeAll

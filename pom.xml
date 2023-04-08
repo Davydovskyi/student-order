@@ -76,11 +76,6 @@
             <artifactId>jersey-media-moxy</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>javax.xml.bind</groupId>-->
-        <!--            <artifactId>jaxb-api</artifactId>-->
-        <!--            <version>${jaxb.version}</version>-->
-        <!--        </dependency>-->
     </dependencies>
 
     <build>

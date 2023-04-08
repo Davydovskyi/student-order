@@ -17,7 +17,6 @@ public class Config {
     private Config() {
     }
 
-    //TODO refactoring 'throw new RuntimeException(e)'
     public static String getProperty(String name) {
         if (!properties.isEmpty()) {
             return properties.getProperty(name);
